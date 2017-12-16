@@ -32,12 +32,12 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="index.html">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sobre</a>
+              <a class="nav-link" href="about.html">Sobre</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="register.html">Cadastro</a>
@@ -56,17 +56,74 @@
 
       <!-- Introduction Row -->
       <h1 class="my-4">Cadastro
-        <small>Adicionar membros ao PFC</small>
+        <small>Adicionar novo membro ao PFC</small>
       </h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel?</p>
-
+      <form>
+        <div class="form-group row">
+          <label for="text-input" class="col-lg-1 col-form-label">Nome</label>
+          <div class="col-lg-5">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="text-input" class="col-lg-1 col-form-label">Idade</label>
+          <div class="col-lg-5">
+            <input class="form-control" type="text">
+          </div>
+        </div>        
+        <div class="form-group row">
+          <label for="email-input" class="col-lg-1 col-form-label">Email</label>
+          <div class="col-lg-5">
+            <input class="form-control" type="email" placeholder="xxx@xxx.com">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="date-input" class="col-lg-1 col-form-label">Date</label>
+          <div class="col-lg-5">
+            <input class="form-control" type="date">
+          </div>
+        </div>
+        <div class="form-check-inline">
+          <label for="estcivil-input" class="col-form-label">Estado Civil</label>
+            <label class="form-check-inline">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="estado">Solteiro(a)
+            </label>
+            <label class="form-check-inline">
+              &nbsp;&nbsp;<input class="form-check-input" type="radio" name="estado">Casado(a)
+            </label>
+            <label class="form-check-inline">
+              &nbsp;&nbsp;<input class="form-check-input" type="radio" name="estado">Divorciado(a)
+            </label>
+        </div>                
+        <div class="form-group row">
+          <label for="tel-input" class="col-lg-1 col-form-label">Teleone</label>
+          <div class="col-lg-5">
+            <input class="form-control" type="tel" placeholder="(xx) xxxxx-xxxx">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="url-input" class="col-lg-1 col-form-label">Github</label>
+          <div class="col-lg-5">
+            <input class="form-control" type="url" placeholder="github.com/">
+          </div>
+        </div>
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="enviar" value="enviar">
+        </div>          
+        <!--<div class="form-group row">
+          <label for="pontos-input" class="col-lg-1 col-form-label">Pontuação</label>
+          <div class="col-lg-5">
+            <input class="form-control" type="number" placeholder="00">
+          </div>
+        </div>-->    
+      </form>
     </div>
     <!-- /.container -->
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Gabriel e Ariana</p>
       </div>
       <!-- /.container -->
     </footer>
@@ -74,9 +131,5 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
   </body>
-
-
-
 </html>
