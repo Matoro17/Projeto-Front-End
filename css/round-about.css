@@ -13,3 +13,31 @@ body {
     padding-top: 56px;
   }
 }
+
+#block {
+
+	margin: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+	border-style: groove;
+	border-color: #4097ef;
+}
+
+#sample{
+	background-color: #E5E5E5;
+}
+td {
+
+	text-align: center;
+}
+
+#pontos{
+	color: white;
+	background-color: #1B56A1;
+	margin: 10px;
+}
+
+img{
+	alig
+}
