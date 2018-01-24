@@ -4,12 +4,12 @@
 	<title>Menu</title>
 
 	<!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/round-about.css" rel="stylesheet">
+    <link href="../Assets/css/round-about.css" rel="stylesheet">
 
-    <script src="js/ddmenu.js" type="text/javascript"></script>
+    <script src="../Assets/js/ddmenu.js" type="text/javascript"></script>
 </head>
 <body>
 	<!-- Navigation -->
@@ -18,14 +18,14 @@
 
         
         <a class="navbar-brand" href="index.html">Programa de Fomento à Capacitação</a>
-        <div align="center"><img src="images/logoNome.png" width="110px" align="center"></div>
+        <div align="center"><img src="../Assets/img/logoNome.png" width="110px" align="center"></div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html" id="home" onload="clicke(event)">Home
+              <a class="nav-link" href="../index.html" id="home" onload="clicke(event)">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -44,10 +44,10 @@
       </div>
     </nav>
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../Assets/js/jquery.js"></script>
     <!-- Bootstrap core JavaScript-->
-    <script src="js/bootstrap.js"></script>
-    <script src="js/menuwhite.js"></script>
+    <script src="../Assets/js/bootstrap.js"></script>
+    <script src="../Assets/js/menuwhite.js"></script>
 </body>
 
 </html>

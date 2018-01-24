@@ -12,10 +12,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Seu Site</title>
+    <script src="../Assets/js/ddmenu.js" type="text/javascript"></script>
 </head>
 <body>
     <!-- Menu -->
-    <a id="ddmenuLink" href="menu.html">Menu</a>
+    <a id="ddmenuLink" href="menu.php">Menu</a>
     <?php
         if(isset($_SESSION["auth"]) && $_SESSION["auth"] == "true") {
             echo "<h1>Você está logado!</h1>";

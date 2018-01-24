@@ -14,14 +14,13 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/round-about.css" rel="stylesheet">
-    <script src="js/ddmenu.js" type="text/javascript"></script>
+    <link href="assets/css/round-about.css" rel="stylesheet">
+    <script src="../Assets/js/ddmenu.js" type="text/javascript"></script>
   </head>
   <body>
 
     <!-- Menu -->
-    <a id="ddmenuLink" href="menu.html">Menu</a>
-
+    <a id="ddmenuLink" href="menu.php">Menu</a>
     <!-- Page Content -->
     <div class="container">
 

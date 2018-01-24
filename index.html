@@ -14,15 +14,42 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/round-about.css" rel="stylesheet">
-    <script src="js/ddmenu.js" type="text/javascript"></script>
+    <link href="Assets/css/round-about.css" rel="stylesheet">
   </head>
 
   <body>
 
-    <!-- Menu -->
-    <a id="ddmenuLink" href="menu.html">Menu</a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
 
+        
+        <a class="navbar-brand" href="index.html">Programa de Fomento à Capacitação</a>
+        <div align="center"><img src="Assets/img/logoNome.png" width="110px" align="center"></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html" id="home" onload="clicke(event)">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="view/about.html" id="sobre" onload="clicke(event)">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="view/login.html" id="login" onload="clicke(event)">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="view/members.html" id="membros" onload="clicke(event)">Membros</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
     <!-- Page Content -->
     <div class="container">
 
