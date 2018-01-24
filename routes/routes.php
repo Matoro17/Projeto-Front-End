@@ -8,11 +8,31 @@
         $email = $_POST["email"];
         $password = md5($_POST["password"]); 
         $birthDate = $_POST["birthDate"];
-        $member = new Member($email, $password, null, $name, $birthDate);
+        $age = $_POST["age"];
+        $civil = $_POST["solteiro"];
+        if ($civil) {
+            $estadocivil = "Solteiro";
+        }
+        else {
+            $civil = $_POST["casado"];
+            if ($civil) {
+                $estadocivil = "Casado";
+            }
+            else {
+                $civil = $_POST["divorciado"];
+                if ($civil) {
+                    $estadocivil = "Divorciado";
+                }
+            }
+        }
+        $telefone = $_POST["telefone"];
+        $github = $_POST["github"];
+
+        $member = new Member($email, $password, null, $name, $birthDate,$age, $estadocivil, $telefone, $github);
 
         $membersController = new MembersController();
         $membersController->registerNewMember($member);
-        header("location:../index.php?register=true");
+        header("location:../view/userRegister.php?register=true");
     }
 
     if(isset($_POST["loginAttempt"])) { 

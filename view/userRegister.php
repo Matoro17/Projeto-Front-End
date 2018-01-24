@@ -28,53 +28,53 @@
       <h1 class="my-4">Cadastro
         <small>Adicionar novo membro ao PFC</small>
       </h1>
-      <form>
+      <form action="../routes/routes.php" method="POST">
         <div class="form-group row">
           <label for="text-input" class="col-lg-1 col-form-label">Nome</label>
           <div class="col-lg-5">
-            <input class="form-control" type="text">
+            <input class="form-control" type="text" name="name">
           </div>
         </div>
         <div class="form-group row">
           <label for="text-input" class="col-lg-1 col-form-label">Idade</label>
           <div class="col-lg-5">
-            <input class="form-control" type="text">
+            <input class="form-control" type="text" name="age">
           </div>
         </div>        
         <div class="form-group row">
           <label for="email-input" class="col-lg-1 col-form-label">Email</label>
           <div class="col-lg-5">
-            <input class="form-control" type="email" placeholder="xxx@xxx.com">
+            <input class="form-control" type="email" name="email" placeholder="xxx@xxx.com">
           </div>
         </div>
         <div class="form-group row">
           <label for="date-input" class="col-lg-1 col-form-label">Date</label>
           <div class="col-lg-5">
-            <input class="form-control" type="date">
+            <input class="form-control" type="date" name="Data de Nascimento">
           </div>
         </div>
         <div class="form-check-inline">
           <label for="estcivil-input" class="col-form-label">Estado Civil</label>
             <label class="form-check-inline">
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="estado">Solteiro(a)
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="solteiro">Solteiro(a)
             </label>
             <label class="form-check-inline">
-              &nbsp;&nbsp;<input class="form-check-input" type="radio" name="estado">Casado(a)
+              &nbsp;&nbsp;<input class="form-check-input" type="radio" name="casado">Casado(a)
             </label>
             <label class="form-check-inline">
-              &nbsp;&nbsp;<input class="form-check-input" type="radio" name="estado">Divorciado(a)
+              &nbsp;&nbsp;<input class="form-check-input" type="radio" name="divorciado">Divorciado(a)
             </label>
         </div>                
         <div class="form-group row">
           <label for="tel-input" class="col-lg-1 col-form-label">Teleone</label>
           <div class="col-lg-5">
-            <input class="form-control" type="tel" placeholder="(xx) xxxxx-xxxx">
+            <input class="form-control" type="tel" placeholder="(xx) xxxxx-xxxx" name="telefone">
           </div>
         </div>
         <div class="form-group row">
           <label for="url-input" class="col-lg-1 col-form-label">Github</label>
           <div class="col-lg-5">
-            <input class="form-control" type="url" placeholder="github.com/">
+            <input class="form-control" type="url" placeholder="github.com/" name="github">
           </div>
         </div>
         <div style="margin-bottom: 20px;">

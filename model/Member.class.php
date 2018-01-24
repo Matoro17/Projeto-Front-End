@@ -3,15 +3,23 @@
         private $id;
         private $name;
         private $password;
+        private $age;
         private $email;
         private $birthDate;
+        private $estadocivil;
+        private $telefone;
+        private $github;
 
-        function __construct($email, $password, $id = null, $name = null, $birthDate = null) {
+        function __construct($email, $password, $id = null, $name = null, $birthDate = null,$age, $estadocivil, $telefone, $github) {
             $this->name = $name;
             $this->password = $password;
             $this->email = $email;
             $this->birthDate = $birthDate;
-            $this->id = $id;            
+            $this->id = $id;    
+            $this->age = $age;
+            $this->estadocivil = $estadocivil;
+            $this->telefone = $telefone;
+            $this->github = $github;      
         }    
         
         function auth() {
@@ -48,6 +56,22 @@
         
         function getBirthDate() {
             return $this->birthDate;
+        }
+
+        function getAge(){
+            return $this->age;
+        }
+
+        function getEstadoCivil(){
+            return $this->estadocivil;
+        }
+
+        function getTelefone(){
+            return $this->telefone;
+        }
+
+        function getGithub(){
+            return $this->github;
         }
     }
 
