@@ -11,10 +11,10 @@
     <title>Projetos</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="Assets/css/round-about.css" rel="stylesheet">
+    <link href="../Assets/css/round-about.css" rel="stylesheet">
     <script src="../Assets/js/ddmenu.js" type="text/javascript"></script>
   </head>
   <body>
@@ -70,8 +70,8 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/jquery/index.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/jquery/index.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
