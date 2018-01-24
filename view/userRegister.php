@@ -88,6 +88,11 @@
           </div>
         </div>-->    
       </form>
+      <?php
+        if(isset($_GET["register"]) && $_GET["register"] == "true") {
+            echo "<h1>Membro Registrado!</h1>";
+        }
+      ?>
     </div>
     <!-- /.container -->
 
