@@ -33,7 +33,7 @@
               <a class="nav-link" href="about.html" id="sobre" onload="clicke(event)">Sobre</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.html" id="login" onload="clicke(event)">Login</a>
+              <a class="nav-link" href="login.php" id="login" onload="clicke(event)">Login</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="members.html" id="membros" onload="clicke(event)">Membros</a>

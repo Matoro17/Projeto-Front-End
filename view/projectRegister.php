@@ -51,7 +51,7 @@
           <label for="text-input" class="col-lg-2 col-form-label">Desenvolvedores</label>
           <div class="col-lg-5">
             <input class="form-control" type="text" name="dev">
-            <button class="btn-default">+1 Desenvolvedor</button>
+            <button class="btn">+1 Desenvolvedor</button>
           </div>
         </div>                  
         <div style="margin-bottom: 20px;">
