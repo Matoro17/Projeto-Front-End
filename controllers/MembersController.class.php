@@ -11,11 +11,18 @@
     
         public function registerNewMember($member) {
             $connection = Connection::getInstance();
-            $query = "INSERT INTO membro(id, nome, email, senha, data_nascimento) VALUES (null, 
+            $query = "INSERT INTO membro(`id`, `name`, `password`, `age`, `email`, `birthdate`, `estadocivil`, `telefone`, `github`, `pontuacao`, `admin`) VALUES (null, 
                                                                                             '{$member->getName()}',
-                                                                                            '{$member->getEmail()}', 
                                                                                             '{$member->getPassword()}', 
-                                                                                            '{$member->getBirthDate()}')";
+                                                                                            '{$member->getAge()}',
+                                                                                            '{$member->getEmail()}', 
+                                                                                            '{$member->getBirthDate()}',
+                                                                                            '{$member->getEstadoCivil()}',
+                                                                                            '{$member->getTelefone()}',
+                                                                                            '{$member->getGithub()}',
+                                                                                            '{$member->getPontuacao()}',
+                                                                                            '{$member->isAdmin()}',
+                                                                                        )";
             $sql = $connection->query($query);
         }
     }

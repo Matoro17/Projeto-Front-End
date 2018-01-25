@@ -17,7 +17,7 @@
       <div class="container">
 
         
-        <a class="navbar-brand" href="index.html">Programa de Fomento à Capacitação</a>
+        <a class="navbar-brand" href="../index.php">Programa de Fomento à Capacitação</a>
         <div align="center"><img src="../Assets/img/logoNome.png" width="110px" align="center"></div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
