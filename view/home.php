@@ -27,17 +27,10 @@
         include "menu.php";
         include "memberbar.php";
     ?>
-    <!-- <a id="ddmenuLink" href="menu.php">Menu</a> -->
+    <!-- Pagina Pessoal do usuário -->
     <?php
 
-        if(isset($_SESSION["auth"]) && $_SESSION["auth"] == "true") {
-            echo "<div><p>Você está logado!</p></div>";
-            echo "<form method='POST' action='../routes/routes.php'>
-                    <input type='submit' name='logoutAttempt' value='Logout'/>
-                </form>";
-
-            
-        }
+        
     ?>
     <!-- Footer -->
     <?php

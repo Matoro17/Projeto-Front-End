@@ -1,8 +1,5 @@
 <?php
   session_start(); 
-  if ($_SESSION["auth"]) {
-    echo "<div><p>Loged</p></div>";
-  }
 ?>
 
 <!DOCTYPE html>

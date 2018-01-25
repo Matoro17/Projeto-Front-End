@@ -33,7 +33,15 @@
               <a class="nav-link" href="about.php" id="sobre" onload="clicke(event)">Sobre</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.php" id="login" onload="clicke(event)">Login</a>
+             <?php
+              if (isset($_SESSION["auth"]) && $_SESSION["auth"]) {
+                echo "<a class='nav-link' href='logout.php'>Logout</a>";
+              }
+              else{
+                echo "<a class='nav-link' href='login.php' id='login' onload='clicke(event)'>Login</a>";
+              }
+            ?>
+              
             </li>
             <li class="nav-item">
               <a class="nav-link" href="members.php" id="membros" onload="clicke(event)">Membros</a>

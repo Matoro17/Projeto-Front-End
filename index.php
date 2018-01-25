@@ -1,8 +1,5 @@
 <?php
   session_start(); 
-  if ($_SESSION["auth"]) {
-    
-  }
 ?>
 
 <!DOCTYPE html>
@@ -59,10 +56,15 @@
     </nav>
 
     <?php
-      echo $_SESSION['name'];
-      if ($_SESSION['admin']) {
-        echo "<a href='view/userRegister.php'>Cadastrar Usuario</a>";
-        echo "<a href='view/projectRegister.php'>Cadastrar Projeto</a>";
+      if (isset($_SESSION["auth"])) {
+        echo $_SESSION['name'];
+        if ($_SESSION['admin']) {
+          echo "<a href='view/userRegister.php'>Cadastrar Usuario</a>";
+          echo "<a href='view/projectRegister.php'>Cadastrar Projeto</a>";
+        }
+        echo "<form method='POST' action='../routes/routes.php'>
+                        <input type='submit' name='logoutAttempt' value='Logout'/>
+                    </form>";
       }
     ?>
 
