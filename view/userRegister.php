@@ -37,7 +37,7 @@
         </div>
         <div class="form-group row">
           <label for="text-input" class="col-lg-1 col-form-label">Idade</label>
-          <div class="col-lg-5">
+          <div class="col-lg-2">
             <input class="form-control" type="text" name="age">
           </div>
         </div>        
@@ -49,25 +49,25 @@
         </div>
         <div class="form-group row">
           <label for="date-input" class="col-lg-1 col-form-label">Date</label>
-          <div class="col-lg-5">
+          <div class="col-lg-2">
             <input class="form-control" type="date" name="Data de Nascimento">
           </div>
         </div>
         <div class="form-check-inline">
           <label for="estcivil-input" class="col-form-label">Estado Civil</label>
             <label class="form-check-inline">
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="solteiro">Solteiro(a)
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="estadocivil" <?php if (isset($estadocivil) && $estadocivil=="solteiro") echo "checked";?> value="solteiro">Solteiro(a)
             </label>
             <label class="form-check-inline">
-              &nbsp;&nbsp;<input class="form-check-input" type="radio" name="casado">Casado(a)
+              &nbsp;&nbsp;<input class="form-check-input" type="radio" name="estadocivil" <?php if (isset($estadocivil) && $estadocivil=="casado") echo "checked";?> value="casado">Casado(a)
             </label>
             <label class="form-check-inline">
-              &nbsp;&nbsp;<input class="form-check-input" type="radio" name="divorciado">Divorciado(a)
+              &nbsp;&nbsp;<input class="form-check-input" type="radio" name="estadocivil" <?php if (isset($estadocivil) && $estadocivil=="divorciado") echo "checked";?> value="divorciado">Divorciado(a)
             </label>
         </div>                
         <div class="form-group row">
           <label for="tel-input" class="col-lg-1 col-form-label">Teleone</label>
-          <div class="col-lg-5">
+          <div class="col-lg-2">
             <input class="form-control" type="tel" placeholder="(xx) xxxxx-xxxx" name="telefone">
           </div>
         </div>
@@ -77,15 +77,24 @@
             <input class="form-control" type="url" placeholder="github.com/" name="github">
           </div>
         </div>
+        <div class="form-group row">
+          <label for="text-input" class="col-lg-1 col-form-label">Pontuação</label>
+          <div class="col-lg-2">
+            <input class="form-control" type="number" name="pontuacao">
+          </div>
+        </div>
+        <div class="form-check-inline">
+          <label for="estcivil-input" class="col-form-label">Administrador</label>
+            <label class="form-check-inline">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="admin" <?php if (isset($admin) && $admin=="true") echo "checked";?> value="true">Sim
+            </label>
+            <label class="form-check-inline">
+              &nbsp;&nbsp;<input class="form-check-input" type="radio" name="admin" <?php if (isset($admin) && $admin=="false") echo "checked";?> value="false">Não
+            </label>
+        </div>                
         <div style="margin-bottom: 20px;">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn" type="submit" name="enviar" value="Enviar" align="center">
-        </div>          
-        <!--<div class="form-group row">
-          <label for="pontos-input" class="col-lg-1 col-form-label">Pontuação</label>
-          <div class="col-lg-5">
-            <input class="form-control" type="number" placeholder="00">
-          </div>
-        </div>-->    
+        </div>     
       </form>
       <?php
         if(isset($_GET["register"]) && $_GET["register"] == "true") {
