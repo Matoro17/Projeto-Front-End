@@ -1,3 +1,10 @@
+<?php
+  session_start(); 
+  if ($_SESSION["auth"]) {
+    
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,24 +39,29 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html" id="home" onload="clicke(event)">Home
+              <a class="nav-link" href="index.php" id="home" onload="clicke(event)">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="view/about.html" id="sobre" onload="clicke(event)">Sobre</a>
+              <a class="nav-link" href="view/about.php" id="sobre" onload="clicke(event)">Sobre</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="view/login.php" id="login" onload="clicke(event)">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="view/members.html" id="membros" onload="clicke(event)">Membros</a>
+              <a class="nav-link" href="view/members.php" id="membros" onload="clicke(event)">Membros</a>
             </li>
 
           </ul>
         </div>
       </div>
     </nav>
+
+    <?php
+      include "view/memberbar.php";
+    ?>
+
     <!-- Page Content -->
     <div class="container">
 
@@ -91,13 +103,9 @@
     </div>
     <!-- /.container -->
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Gabriel e Ariana 2017</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+    <?php
+      include "view/footer.html";
+    ?>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

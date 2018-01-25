@@ -9,26 +9,13 @@
         $password = md5($_POST["password"]); 
         $birthDate = $_POST["birthDate"];
         $age = $_POST["age"];
-        $civil = $_POST["solteiro"];
-        if ($civil) {
-            $estadocivil = "Solteiro";
-        }
-        else {
-            $civil = $_POST["casado"];
-            if ($civil) {
-                $estadocivil = "Casado";
-            }
-            else {
-                $civil = $_POST["divorciado"];
-                if ($civil) {
-                    $estadocivil = "Divorciado";
-                }
-            }
-        }
+        $estadocivil = $_POST["estadocivil"];
         $telefone = $_POST["telefone"];
         $github = $_POST["github"];
+        $pontuacao = $_POST["pontuacao"];
+        $admin = $_POST["admin"];
 
-        $member = new Member($email, $password, null, $name, $birthDate,$age, $estadocivil, $telefone, $github);
+        $member = new Member($email, $password, null, $name, $birthDate,$age, $estadocivil, $telefone, $github, $pontuacao,$admin);
 
         $membersController = new MembersController();
         $membersController->registerNewMember($member);
@@ -37,15 +24,18 @@
 
     if(isset($_POST["loginAttempt"])) { 
         $email = $_POST["email"];
-        $password = md5($_POST["password"]); 
+        $password = $_POST["password"];
+        $password2 = md5($_POST["password"]); 
         $member = new Member($email, $password);
 
         if($member->auth()) {
             $_SESSION["auth"] = true;
-            $_SESSION["member"] = $member;
+            $_SESSION["name"] = $member->getName();
+            
             header("location:../view/home.php");
         } else {
-            header("location:../index.php?valid=false");
+            header("location:../view/login.php?valid=false");
+           
         }
     }
 

@@ -1,3 +1,10 @@
+<?php
+  session_start(); 
+  if ($_SESSION["auth"]) {
+    echo "<div><p>Loged</p></div>";
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,22 +22,24 @@
 
     <!-- Custom styles for this template -->
     <link href="../Assets/css/round-about.css" rel="stylesheet">
-    <script src="../Assets/js/ddmenu.js" type="text/javascript"></script>
+    
   </head>
   <body>
 
     <!-- Menu -->
-    <a id="ddmenuLink" href="menu.php">Menu</a>
+    <?php
+        include "menu.php";
+    ?>
     <!-- Page Content -->
     <div class="container">
 
       <!-- Introduction Row -->
       <h1 class="my-4">Login</h1>
-      <form>
+      <form action="../routes/routes.php" method="POST">
         <div class="form-group row">
-          <label for="text-input" class="col-lg-1 col-form-label">Nome</label>
+          <label for="text-input" class="col-lg-1 col-form-label">E-mail</label>
           <div class="col-lg-3">
-            <input class="form-control" type="text" name="nome">
+            <input class="form-control" type="text" name="email">
           </div>
         </div>
         <div class="form-group row">
@@ -40,20 +49,21 @@
           </div>
         </div>                 
         <div style="margin-bottom: 20px;">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn" type="submit" name="enviar" value="Enviar" align="center">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn" type="submit" name="loginAttempt" value="login" align="center">
         </div>            
       </form>
+      <?php
+          if(isset($_GET["valid"]) && $_GET["valid"] == "false") {
+              echo "<h1> Login negado! </h1>";
+          }
+      ?>
     </div>
     <!-- /.container -->
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Gabriel e Ariana 2017</p>
-      </div>
-      <!-- /.container -->
-    </footer>
-
+    <?php
+      include "footer.html";
+    ?>
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/jquery/index.js"></script>

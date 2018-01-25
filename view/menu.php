@@ -3,7 +3,7 @@
 <head>
 	<title>Menu</title>
 
-	<!-- Bootstrap core CSS -->
+	   <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -25,24 +25,26 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="../index.html" id="home" onload="clicke(event)">Home
+              <a class="nav-link" href="../index.php" id="home" onload="clicke(event)">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html" id="sobre" onload="clicke(event)">Sobre</a>
+              <a class="nav-link" href="about.php" id="sobre" onload="clicke(event)">Sobre</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="login.php" id="login" onload="clicke(event)">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="members.html" id="membros" onload="clicke(event)">Membros</a>
+              <a class="nav-link" href="members.php" id="membros" onload="clicke(event)">Membros</a>
             </li>
 
           </ul>
         </div>
       </div>
     </nav>
+
+
     <!-- jQuery -->
     <script src="../Assets/js/jquery.js"></script>
     <!-- Bootstrap core JavaScript-->

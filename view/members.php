@@ -1,3 +1,6 @@
+<?php
+    session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +24,9 @@
   <body>
 
     <!-- Menu -->
-    <a id="ddmenuLink" href="menu.php">Menu</a>
+    <?php
+        include "menu.php";
+    ?>
     <!-- Page Content -->
     <div class="container">
 

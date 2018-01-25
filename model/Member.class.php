@@ -9,8 +9,12 @@
         private $estadocivil;
         private $telefone;
         private $github;
+        private $pontuacao;
+        private $admin;
 
-        function __construct($email, $password, $id = null, $name = null, $birthDate = null,$age, $estadocivil, $telefone, $github) {
+
+
+        function __construct($email, $password, $id = "", $name = "", $birthDate = "",$age = "", $estadocivil = "", $telefone = "", $github = "", $pontuacao = "", $admin = "") {
             $this->name = $name;
             $this->password = $password;
             $this->email = $email;
@@ -19,19 +23,28 @@
             $this->age = $age;
             $this->estadocivil = $estadocivil;
             $this->telefone = $telefone;
-            $this->github = $github;      
+            $this->github = $github;  
+            $this->pontuacao = $pontuacao;  
+            $this->admin = $admin;  
         }    
         
         function auth() {
             $conn = Connection::getInstance();
-            $query = "SELECT * FROM membro WHERE email = '{$this->email}' AND senha = '{$this->password}'";
+            $query = "SELECT * FROM membro WHERE email = '{$this->email}' AND password = '{$this->password}'";
             $sql = $conn->query($query);
             $row = $sql->fetch(PDO::FETCH_ASSOC);
             
             if($row) {
-                $this->name = $row['nome'];
+                $this->name = $row['name'];
                 $this->id = $row['id'];
-                $this->birthDate = $row['data_nascimento'];
+                $this->birthDate = $row['birthdate'];
+                $this->email = $row['email'];
+                $this->age = $row['age'];
+                $this->estadocivil = $row['estadocivil'];
+                $this->github = $row['github'];
+                $this->admin = $row['admin'];
+                $this->pontuacao = $row['pontuacao'];
+                $this->telefone = $row['telefone'];
                 return true;
             } else {
                 return false;
@@ -72,6 +85,14 @@
 
         function getGithub(){
             return $this->github;
+        }
+
+        function getPontuacao(){
+            return $this->pontuacao;
+        }
+
+        function isAdmin(){
+            return $this->admin;
         }
     }
 

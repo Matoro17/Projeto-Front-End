@@ -1,8 +1,8 @@
 <?php
     session_start(); 
-    
+    echo $_SESSION["auth"];
     if(!isset($_SESSION["auth"])) {
-        header("location:../index.php");
+        echo "<div><p>Loged</p></div>";
     }
 ?>
 <!DOCTYPE html>
@@ -11,21 +11,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../Assets/css/round-about.css" rel="stylesheet">
+
+    
     <title>Seu Site</title>
-    <script src="../Assets/js/ddmenu.js" type="text/javascript"></script>
+    
 </head>
 <body>
     <!-- Menu -->
-    <a id="ddmenuLink" href="menu.php">Menu</a>
     <?php
+        include "menu.php";
+    ?>
+    <!-- <a id="ddmenuLink" href="menu.php">Menu</a> -->
+    <?php
+
         if(isset($_SESSION["auth"]) && $_SESSION["auth"] == "true") {
-            echo "<h1>Você está logado!</h1>";
+            echo "<div><p>Você está logado!</p></div>";
             echo "<form method='POST' action='../routes/routes.php'>
                     <input type='submit' name='logoutAttempt' value='Logout'/>
                 </form>";
 
             
         }
+    ?>
+    <!-- Footer -->
+    <?php
+      include "footer.html";
     ?>
 </body>
 </html>
