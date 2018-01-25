@@ -26,6 +26,7 @@
     <!-- Menu -->
     <?php
         include "menu.php";
+        include "memberbar.php";
     ?>
     <!-- Page Content -->
     <div class="container">

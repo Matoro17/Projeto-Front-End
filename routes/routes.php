@@ -31,6 +31,7 @@
         if($member->auth()) {
             $_SESSION["auth"] = true;
             $_SESSION["name"] = $member->getName();
+            $_SESSION["admin"] = $member->isAdmin();
             
             header("location:../view/home.php");
         } else {

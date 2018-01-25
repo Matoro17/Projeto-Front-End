@@ -25,6 +25,7 @@
     <!-- Menu -->
     <?php
         include "menu.php";
+        include "memberbar.php";
     ?>
     <!-- <a id="ddmenuLink" href="menu.php">Menu</a> -->
     <?php
