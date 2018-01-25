@@ -60,7 +60,7 @@
         <div class="form-group row">
           <label for="date-input" class="col-lg-1 col-form-label">Date</label>
           <div class="col-lg-2">
-            <input class="form-control" type="date" name="Data de Nascimento">
+            <input class="form-control" type="text" name="birthdate">
           </div>
         </div>
         <div class="form-check-inline">
@@ -84,7 +84,7 @@
         <div class="form-group row">
           <label for="url-input" class="col-lg-1 col-form-label">Github</label>
           <div class="col-lg-5">
-            <input class="form-control" type="url" placeholder="github.com/" name="github">
+            <input class="form-control" type="text" placeholder="github.com/" name="github">
           </div>
         </div>
         <div class="form-group row">
@@ -96,21 +96,21 @@
         <div class="form-check-inline">
           <label for="estcivil-input" class="col-form-label">Administrador</label>
             <label class="form-check-inline">
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="admin" <?php if (isset($admin) && $admin=="true") echo "checked";?> value="true">Sim
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="admin" <?php if (isset($admin) && $admin=="true") echo "checked";?> value="1">Sim
             </label>
             <label class="form-check-inline">
-              &nbsp;&nbsp;<input class="form-check-input" type="radio" name="admin" <?php if (isset($admin) && $admin=="false") echo "checked";?> value="false">Não
+              &nbsp;&nbsp;<input class="form-check-input" type="radio" name="admin" <?php if (isset($admin) && $admin=="false") echo "checked";?> value="0">Não
             </label>
-        </div>                
+        </div> 
+        <div class="form-group row">
+          <label for="text-input" class="col-lg-1 col-form-label">Password</label>
+          <div class="col-lg-5">
+            <input class="form-control" type="text" name="password">
+          </div>
+        </div>                       
         <div style="margin-bottom: 20px;">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn" type="submit" name="registerAttempt" value="Enviar" align="center">
-        </div>          
-        <!--<div class="form-group row">
-          <label for="pontos-input" class="col-lg-1 col-form-label">Pontuação</label>
-          <div class="col-lg-5">
-            <input class="form-control" type="number" placeholder="00">
-          </div>
-        </div>-->    
+        </div>             
       </form>
       <?php
         if(isset($_GET["register"]) && $_GET["register"] == "true") {

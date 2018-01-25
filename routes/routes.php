@@ -7,7 +7,7 @@
         $name = $_POST["name"];
         $email = $_POST["email"];
         $password = md5($_POST["password"]); 
-        $birthDate = $_POST["birthDate"];
+        $birthDate = $_POST["birthdate"];
         $age = $_POST["age"];
         $estadocivil = $_POST["estadocivil"];
         $telefone = $_POST["telefone"];
@@ -24,8 +24,7 @@
 
     if(isset($_POST["loginAttempt"])) { 
         $email = $_POST["email"];
-        $password = $_POST["password"];
-        $password2 = md5($_POST["password"]); 
+        $password = md5($_POST["password"]); 
         $member = new Member($email, $password);
 
         if($member->auth()) {
