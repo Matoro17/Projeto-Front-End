@@ -21,7 +21,7 @@
                                                                                             '{$member->getTelefone()}',
                                                                                             '{$member->getGithub()}',
                                                                                             '{$member->getPontuacao()}',
-                                                                                            '{$member->isAdmin()}',
+                                                                                            '{$member->isAdmin()}'
                                                                                         )";
             $sql = $connection->query($query);
         }
