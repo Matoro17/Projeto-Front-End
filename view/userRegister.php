@@ -60,7 +60,7 @@
         <div class="form-group row">
           <label for="date-input" class="col-lg-1 col-form-label">Date</label>
           <div class="col-lg-2">
-            <input class="form-control" type="text" name="birthdate">
+            <input class="form-control" type="date" name="birthdate">
           </div>
         </div>
         <div class="form-check-inline">
