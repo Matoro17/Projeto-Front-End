@@ -31,6 +31,41 @@
             $query = "UPDATE membro SET nome='{$name}' WHERE id= $id";
             $sql = $connection->query($query);
         }
+        public function updateMemberAge($id, $age) {
+            $connection = Connection::getInstance();
+            $query = "UPDATE membro SET age='{$age}' WHERE id= $id";
+            $sql = $connection->query($query);
+        }
+        public function updateMemberEmail($id, $email) {
+            $connection = Connection::getInstance();
+            $query = "UPDATE membro SET email='{$email}' WHERE id= $id";
+            $sql = $connection->query($query);
+        }
+        public function updateMemberBirthdate($id, $birthdate) {
+            $connection = Connection::getInstance();
+            $query = "UPDATE membro SET birthdate='{$birthdate}' WHERE id= $id";
+            $sql = $connection->query($query);
+        }        
+        public function updateMemberEstado($id, $estadocivil) {
+            $connection = Connection::getInstance();
+            $query = "UPDATE membro SET estadocivil='{$estadocivil}' WHERE id= $id";
+            $sql = $connection->query($query);
+        }
+        public function updateMemberTel($id, $telefone) {
+            $connection = Connection::getInstance();
+            $query = "UPDATE membro SET telefone='{$telefone}' WHERE id= $id";
+            $sql = $connection->query($query);
+        }
+        public function updateMemberGithub($id, $github) {
+            $connection = Connection::getInstance();
+            $query = "UPDATE membro SET github='{$github}' WHERE id= $id";
+            $sql = $connection->query($query);
+        }
+        public function updateMemberPontuacao($id, $pontuacao) {
+            $connection = Connection::getInstance();
+            $query = "UPDATE membro SET pontuacao='{$pontuacao}' WHERE id= $id";
+            $sql = $connection->query($query);
+        }
 
         public function getMember($id) {
             $connection = Connection::getInstance();
