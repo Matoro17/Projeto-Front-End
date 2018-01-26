@@ -39,6 +39,7 @@
     </div>
     <!-- /.container -->
     <div class="container" >
+      
       <!--Inicio de um membro -->
       <div class="row" id="block">
         <div class="col-lg-2 col-md-2" >

@@ -31,6 +31,7 @@
             $_SESSION["auth"] = true;
             $_SESSION["name"] = $member->getName();
             $_SESSION["admin"] = $member->isAdmin();
+            $_SESSION["points"] = $member->getPontuacao();
             
             header("location:../view/home.php");
         } else {

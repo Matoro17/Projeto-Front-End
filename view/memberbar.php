@@ -16,11 +16,12 @@
 		
 		if (isset($_SESSION["auth"]) && $_SESSION["auth"]) {
 			$nome = $_SESSION['name'];
+			$pontos = $_SESSION['points'];
 			if ($_SESSION['admin']) {
 				echo "<nav class='navbar navbar-expand-lg navbar-blue bg-dark'>
 					      <div class='container'>
 					      	<div class='collapse navbar-collapse' id='navbarResponsive'>
-					      		<a class='nav-link'>Bem vindo: </a>.$nome.
+					      		<b style='color:#007bff;'>Bem vindo:</b><a class='nav-link' href='home.php'> $nome</a><b style='color:#007bff;'>Pontuação - $pontos</b>	
 					          <ul class='navbar-nav ml-auto'>
 					            <li class='nav-item'>
 					              <a class='nav-link' href='userRegister.php' id='userregister'>Cadastrar Usuario
@@ -36,10 +37,10 @@
 					    </nav>";
 			}
 			else{
-				echo "<nav class='navbar navbar-expand-lg navbar-blue bg-dark'>
+				echo "<nav class='navbar navbar-expand-lg navbar-white bg-dark'>
 					      <div class='container'>
 					      	<div class='collapse navbar-collapse' id='navbarResponsive'>
-					      		<a class='nav-link'>Bem vindo: </a>.$nome.
+					      		<b style='color:#007bff;'>Bem vindo:</b><a class='nav-link' href='home.php'> $nome</a><b style='color:#007bff;'>Pontuação - $pontos</b>
 					          <ul class='navbar-nav ml-auto'>
 					            
 					          </ul>

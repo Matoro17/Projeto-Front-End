@@ -44,7 +44,14 @@
               <a class="nav-link" href="view/about.php" id="sobre" onload="clicke(event)">Sobre</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="view/login.php" id="login" onload="clicke(event)">Login</a>
+              <?php
+                if (isset($_SESSION["auth"]) && $_SESSION["auth"]) {
+                  echo "<a class='nav-link' href='view/logout.php'>Logout</a>";
+                }
+                else{
+                  echo "<a class='nav-link' href='view/login.php' id='login' onload='clicke(event)'>Login</a>";
+                }
+              ?>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="view/members.php" id="membros" onload="clicke(event)">Membros</a>
@@ -56,17 +63,43 @@
     </nav>
 
     <?php
-      if (isset($_SESSION["auth"])) {
-        echo $_SESSION['name'];
-        if ($_SESSION['admin']) {
-          echo "<a href='view/userRegister.php'>Cadastrar Usuario</a>";
-          echo "<a href='view/projectRegister.php'>Cadastrar Projeto</a>";
-        }
-        echo "<form method='POST' action='../routes/routes.php'>
-                        <input type='submit' name='logoutAttempt' value='Logout'/>
-                    </form>";
+    
+    if (isset($_SESSION["auth"]) && $_SESSION["auth"]) {
+      $nome = $_SESSION['name'];
+      if ($_SESSION['admin']) {
+        echo "<nav class='navbar navbar-expand-lg navbar-blue bg-dark'>
+                <div class='container'>
+                  <div class='collapse navbar-collapse' id='navbarResponsive'>
+                    <b style='color:#007bff;'>Bem vindo:</b><a class='nav-link' href='home.php'> $nome</a>  
+                    <ul class='navbar-nav ml-auto'>
+                      <li class='nav-item'>
+                        <a class='nav-link' href='view/userRegister.php' id='userregister'>Cadastrar Usuario
+                          <span class='sr-only'>(current)</span>
+                        </a>
+                      </li>
+                      <li class='nav-item'>
+                        <a class='nav-link' href='view/projectRegister.php' id='projectregister'>Cadastrar Projeto</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>";
       }
-    ?>
+      else{
+        echo "<nav class='navbar navbar-expand-lg navbar-white bg-dark'>
+                <div class='container'>
+                  <div class='collapse navbar-collapse' id='navbarResponsive'>
+                    <b style='color:#007bff;'>Bem vindo:</b><a class='nav-link' href='home.php'> $nome</a>
+                    <ul class='navbar-nav ml-auto'>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </nav>";
+      }
+      
+    }
+  ?>
 
     <!-- Page Content -->
     <div class="container">

@@ -1,6 +1,5 @@
 <?php
     session_start(); 
-    echo $_SESSION["auth"];
     if(!isset($_SESSION["auth"])) {
         echo "<div><p>Loged</p></div>";
     }
@@ -29,7 +28,7 @@
     ?>
     <!-- Pagina Pessoal do usuário -->
     <?php
-
+        
         
     ?>
     <!-- Footer -->
