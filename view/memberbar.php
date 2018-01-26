@@ -8,8 +8,6 @@
 
     <!-- Custom styles for this template -->
     <link href="../Assets/css/round-about.css" rel="stylesheet">
-
-    <script src="../Assets/js/ddmenu.js" type="text/javascript"></script>
 </head>
 <body>
 	<?php
@@ -52,10 +50,11 @@
 		}
 	?>
     <!-- jQuery -->
-    <script src="../Assets/js/jquery.js"></script>
+    <script src="../vendor/jquery/jquery.js"></script>
     <!-- Bootstrap core JavaScript-->
-    <script src="../Assets/js/bootstrap.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.js"></script>
     <script src="../Assets/js/menuwhite.js"></script>
+
 </body>
 
 </html>

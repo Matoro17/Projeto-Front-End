@@ -8,8 +8,6 @@
 
     <!-- Custom styles for this template -->
     <link href="../Assets/css/round-about.css" rel="stylesheet">
-
-    <script src="../Assets/js/ddmenu.js" type="text/javascript"></script>
 </head>
 <body>
 	<!-- Navigation -->
