@@ -33,7 +33,7 @@
             $_SESSION["name"] = $member->getName();
             $_SESSION["admin"] = $member->isAdmin();
             $_SESSION["points"] = $member->getPontuacao();
-
+            $_SESSION['id'] = $member->getId();
             $control = new MembersController();
             $_SESSION['size'] = $control->getSize();
            

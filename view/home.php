@@ -1,4 +1,6 @@
 <?php
+     require_once("../controllers/MembersController.class.php");
+     require_once("../model/Member.class.php");
     session_start(); 
     if(!isset($_SESSION["auth"])) {
         echo "<div><p>Loged</p></div>";
@@ -26,11 +28,47 @@
         include "menu.php";
         include "memberbar.php";
     ?>
+
     <!-- Pagina Pessoal do usuário -->
     <?php
-        
-        
+     
+
+        if (isset($_SESSION['auth'])) {
+
+            $id = $_SESSION['id'];
+            $control = new MembersController();            
+            $_SESSION['size'] = $control->getSize();
+
+            $atual = $control->getMember($id);
+            $nome = $atual->getName();
+            $age = $atual->getAge();
+            $email = $atual->getEmail();
+            $tel = $atual->getTelefone();
+            $estado = $atual->getEstadoCivil();
+            $ponto = $atual->getPontuacao();
+
+            echo "<div class='container'>
+                        <div class='form-group row' id='divHome'>
+                            <div class='col-lg-5'>
+                                <h5>$nome</h5>
+                                <h5>$$age</h5>
+                                <h5>$email</h5>
+                                <h5>$tel</h5>
+                                <h5>$estado</h5>
+                                <h5>$ponto</h5>
+                            </div>
+                        </div>
+                        <div class='form-group row'>
+                            <div class='col-lg-5'>
+                                <h4>Projetos</h4>
+                            </div>
+                        </div>
+                  </div>";
+
+
+        }  
     ?>
+
     <!-- Footer -->
     <?php
       include "footer.html";
