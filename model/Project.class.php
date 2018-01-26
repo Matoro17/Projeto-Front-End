@@ -8,9 +8,9 @@
 		private $contratante;
 		private $orcamento;
 		private $workers;
-		private $developers[];
+		private $developers;
 		
-		function __construct($id = null, $name = null, $contratante = null,$orcamento, $workers,$developers[])
+		function __construct($id = null, $name, $contratante,$orcamento, $workers,$developers)
 		{
 			$this->name = $name;
 			$this->contratante = $contratante;
@@ -19,8 +19,36 @@
 			$this->workers = $workers;
 		}
 
+		function trabalhaNoProjeto($membername){
+			foreach ($developers as $value) {
+				if ($value == $membername) {
+					return true;
+				}
+			}
+			return false;
+		}
+
 		function getName() {
             return $this->name;
+        }
+
+        function getId(){
+        	return $this->id;
+        }
+
+        function getContratante(){
+        	return $this->contratante;
+        }
+        function getOrcamento(){
+        	return $this->orcamento;
+        }
+
+        function getWorkers(){
+        	return $this->workers;
+        }
+
+        function getDevelopers(){
+        	return $this->developers;
         }
 	}
 ?>
