@@ -1,6 +1,7 @@
 <?php
     require_once("../database/Connection.class.php");
     require_once("../controllers/MembersController.class.php");
+    require_once("../controllers/ProjectsController.class.php");
     session_start();
     
     if(isset($_POST["registerAttempt"])) { 
@@ -21,6 +22,21 @@
         $_SESSION['size'] = $membersController->getSize();
         $membersController->registerNewMember($member);
         header("location:../view/userRegister.php?register=true");
+    }
+
+    if(isset($_POST["registerProjectAttempt"])) { 
+        $name = $_POST["nomedoprojeto"];
+        $contratante = $_POST["contratante"];
+        $orcamento = $_POST["orcamento"]; 
+        $workers = 1;
+        $developers = $_POST["developers"];
+        
+
+        $project = new Project(null, $name, $contratante, $orcamento,$workers, $developers);
+
+        $projectController = new ProjectController();
+        $projectController->registerNewProject($project);
+        header("location:../view/projectRegister.php?register=true");
     }
 
     if(isset($_POST["loginAttempt"])) { 
