@@ -25,5 +25,38 @@
                                                                                         )";
             $sql = $connection->query($query);
         }
+
+        public function updateMemberName($id, $name) {
+            $connection = Connection::getInstance();
+            $query = "UPDATE membro SET nome='{$name}' WHERE id= $id";
+            $sql = $connection->query($query);
+        }
+
+        public function getMember($id) {
+            $connection = Connection::getInstance();
+            $query = "SELECT * FROM membro WHERE id= $id";
+            $sql = $connection->query($query);
+            $row = $sql->fetch(PDO::FETCH_ASSOC);
+            
+            if(isset($row)) {
+                return new Member($row['email'],$row['password'],$id,$row['name'], $row['birthdate'], $row['age'],$row['estadocivil'],$row['telefone'],$row['github'],$row['pontuacao'],$row['admin'] );
+            } else {
+                return null;
+            }
+        }
+
+        public function removeMember($id) {
+            $connection = Connection::getInstance();
+            $query = "DELETE FROM membro WHERE id= $id";
+            $sql = $connection->query($query);
+        }
+
+        public function getSize(){
+            $connection = Connection::getInstance();
+            $query = "SELECT MAX(id) FROM membro";
+            $sql = $connection->query($query);
+            $row = $sql->fetch(PDO::FETCH_ASSOC);
+            return $row;
+        }
     }
 ?>

@@ -18,6 +18,7 @@
         $member = new Member($email, $password, null, $name, $birthDate,$age, $estadocivil, $telefone, $github, $pontuacao,$admin);
 
         $membersController = new MembersController();
+        $_SESSION['size'] = $membersController->getSize();
         $membersController->registerNewMember($member);
         header("location:../view/userRegister.php?register=true");
     }
@@ -32,7 +33,10 @@
             $_SESSION["name"] = $member->getName();
             $_SESSION["admin"] = $member->isAdmin();
             $_SESSION["points"] = $member->getPontuacao();
-            
+
+            $control = new MembersController();
+            $_SESSION['size'] = $control->getSize();
+           
             header("location:../view/home.php");
         } else {
             header("location:../view/login.php?valid=false");
