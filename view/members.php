@@ -21,8 +21,6 @@
 
     <!-- Custom styles for this template -->
     <link href="../Assets/css/round-about.css" rel="stylesheet">
-
-    <script src="../Assets/js/ddmenu.js" type="text/javascript"></script>
   </head>
   <body>
 
@@ -126,12 +124,9 @@
 
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Gabriel e Ariana 2017</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+    <?php
+      include "footer.html";
+    ?>
 
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
