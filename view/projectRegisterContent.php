@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="container">
 
       <!-- Introduction Row -->
       <h1 class="my-4">Projetos
@@ -8,31 +8,38 @@
         <div class="form-group row">
           <label for="text-input" class="col-lg-2 col-form-label">Nome do projeto</label>
           <div class="col-lg-5">
-            <input class="form-control" type="text">
+            <input class="form-control" type="text" name="nomedoprojeto">
           </div>
         </div>
         <div class="form-group row">
           <label for="text-input" class="col-lg-2 col-form-label">Contratante</label>
           <div class="col-lg-5">
-            <input class="form-control" type="text">
+            <input class="form-control" type="text" name="contratante">
           </div>
         </div>
         <div class="form-group row">
           <label for="text-input" class="col-lg-2 col-form-label">Orçamento Total</label>
           <div class="col-lg-2">
-            <input class="form-control" type="text">
+            <input class="form-control" type="text" name="orcamento">
           </div>
         </div>
         <div class="form-group row">
           <label for="text-input" class="col-lg-2 col-form-label">Desenvolvedores</label>
-          <div class="col-lg-5">
+          <div class="col-lg-5" id="divdodev">
             <input class="form-control" type="text" name="dev">
-            <button class="btn">+1 Desenvolvedor</button>
+            <button type="button" class="btn" id="btndev">+1 Dev</button>
           </div>
         </div>                  
         <div style="margin-bottom: 20px;">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn" type="submit" name="enviar" value="Enviar" align="center">
         </div>            
       </form>
-    </div>
-    <!-- /.container -->
+</div>   
+<!-- /.container -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../vendor/jquery/adddesenvolvedor.js"></script>
+
+

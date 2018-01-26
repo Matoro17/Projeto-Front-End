@@ -35,8 +35,8 @@
       else{
         echo "<div class='container' style='height: 200px'><b>Permissão negada para registro de Projetos</b></div>";
       }
-
     ?>
+    <!-- /.container -->
 
     <!-- Footer -->
     <?php
