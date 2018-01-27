@@ -38,7 +38,8 @@
         <div class="form-group row">
           <label for="text-input" class="col-lg-2 col-form-label">Desenvolvedores</label>
           <div class="col-lg-5" id="divdodev">
-            <input class="form-control" type="text" name="developers[]">
+            <input class="form-control" type="text" name="developers0">
+            <input type="hidden" name="quant" value="1" id="javu">
             <button type="button" class="btn" id="btndev">+1 Dev</button>
           </div>
         </div>                  

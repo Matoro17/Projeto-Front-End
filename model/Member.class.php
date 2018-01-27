@@ -15,6 +15,7 @@
 
 
         function __construct($email, $password, $id = "", $name = "", $birthDate = "",$age = "", $estadocivil = "", $telefone = "", $github = "", $pontuacao = "", $admin = "") {
+            
             $this->name = $name;
             $this->password = $password;
             $this->email = $email;

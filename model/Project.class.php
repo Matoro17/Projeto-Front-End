@@ -12,26 +12,19 @@
 		private $workers;
 		private $developers = array();
 		
-		function __construct($id = null, $name, $contratante,$orcamento, $workers,$developers,$datainicio,$dataentrega)
+		function __construct($id , $name, $contratante,$orcamento, $workers,$datainicio,$dataentrega)
 		{
+			$this->id = $id;
 			$this->name = $name;
 			$this->contratante = $contratante;
 			$this->orcamento = $orcamento;
-			$this->developers = $developers;		
 			 
 			$this->workers = $workers;
 			$this->datainicio = $datainicio;
 			$this->dataentrega = $dataentrega; 
 		}
 
-		function trabalhaNoProjeto($membername){
-			foreach ($this->developers as $value) {
-				if ($value == $membername) {
-					return true;
-				}
-			}
-			return false;
-		}
+		
 
 		function getName() {
             return $this->name;

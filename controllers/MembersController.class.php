@@ -69,11 +69,12 @@
 
         public function getIdMember($nome){
             $connection = Connection::getInstance();
-            $query = "SELECT * FROM membro WHERE name= $nome";
+            $query = "SELECT * FROM membro WHERE name= '".$nome."'";
             $sql = $connection->query($query);
             $row = $sql->fetch(PDO::FETCH_ASSOC);
+           
             if(isset($row)) {
-                return new Member($row['email'],$row['password'],$id,$row['name'], $row['birthdate'], $row['age'],$row['estadocivil'],$row['telefone'],$row['github'],$row['pontuacao'],$row['admin'] );
+                return new Member($row['email'],$row['password'],$row['id'],$row['name'], $row['birthdate'], $row['age'],$row['estadocivil'],$row['telefone'],$row['github'],$row['pontuacao'],$row['admin'] );
             } else {
                 return null;
             }
@@ -85,7 +86,7 @@
             $sql = $connection->query($query);
             $row = $sql->fetch(PDO::FETCH_ASSOC);
             if(isset($row)) {
-                return new Member($row['email'],$row['password'],$id,$row['name'], $row['birthdate'], $row['age'],$row['estadocivil'],$row['telefone'],$row['github'],$row['pontuacao'],$row['admin'] );
+                return new Member($row['email'],$row['password'],$row['id'],$row['name'], $row['birthdate'], $row['age'],$row['estadocivil'],$row['telefone'],$row['github'],$row['pontuacao'],$row['admin'] );
             } else {
                 return null;
             }

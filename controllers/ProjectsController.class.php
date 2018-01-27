@@ -10,22 +10,32 @@
             $this->connection = Connection::getInstance();
         }
     
-        public function registerNewProject($project) {
+        public function registerNewProject($project,$vector = array()) {
+            
             $connection = Connection::getInstance();
-            $query = "INSERT INTO project(`id`, `name`, `contratante`, `orcamento`, `workers`, `developers`,`datainicio`, `dataentrega`) VALUES (null, 
+            $query = "INSERT INTO project(`id`, `name`, `contratante`, `orcamento`, `workers`,`datainicio`, `dataentrega`) VALUES (null, 
                                                                                             '{$project->getName()}',
                                                                                             '{$project->getContratante()}', 
                                                                                             '{$project->getOrcamento()}',
                                                                                             '{$project->getWorkers()}', 
-                                                                                            '{$project->getDevelopers()}',
                                                                                             '{$project->getDataInicio()}',
                                                                                             '{$project->getDataEntrega()}'
                                                                                         )";
             $sql = $connection->query($query);
-            $atual = getProjectIdbyName($project->getName());
+            $atual = $this->getProjectIdbyName($project->getName());
             
-            foreach ($project->getDevelopers() as $value) {
-                $query = "INSERT INTO `membroproject`(`ID_membroproject`, `idMembro`, `idProject`) VALUES (null,getIdMember($value),$atual)";
+            $atual = $atual->getId();
+            $mebrocontrol = new MembersController();
+
+            foreach ($vector as $value) {
+                $idM = $mebrocontrol->getIdMember($value)->getId();
+                
+                $query = "INSERT INTO `membroproject`(`ID_membroproject`, `idMembro`, `idProject`) VALUES (null,$idM,$atual)";
+
+                $sql = $connection->query($query);
+                $row = $sql->fetch(PDO::FETCH_ASSOC);
+                var_dump($row);
+                die();
             }
 
             
@@ -45,20 +55,20 @@
             $row = $sql->fetch(PDO::FETCH_ASSOC);
            
             if(isset($row)) {
-                return new Project($row['id'],$row['name'],$row['contratante'], $row['orcamento'], $row['workers'],$row['developers'],$row['datainicio'], $row['dataentrega']);
+                return new Project($row['id'],$row['name'],$row['contratante'], $row['orcamento'], $row['workers'],$row['datainicio'], $row['dataentrega']);
             } else {
                 return null;
             }
         }
 
-        public function getProjectIdbyName($nome){
+        public function getProjectIdbyName($palavra){
             $connection = Connection::getInstance();
-            $query = "SELECT * FROM project WHERE name=$nome";
+            $query = "SELECT * FROM project WHERE name='".$palavra."'";
             $sql = $connection->query($query);
             $row = $sql->fetch(PDO::FETCH_ASSOC);
-           
+            
             if(isset($row)) {
-                return new Project($row['id'],$row['name'],$row['contratante'], $row['orcamento'], $row['workers'],$row['developers'],$row['datainicio'], $row['dataentrega']);
+                return new Project($row['id'],$row['name'],$row['contratante'], $row['orcamento'], $row['workers'],$row['datainicio'], $row['dataentrega']);
             } else {
                 return null;
             }

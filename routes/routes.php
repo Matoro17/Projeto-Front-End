@@ -29,14 +29,21 @@
         $name = $_POST["nomedoprojeto"];
         $contratante = $_POST["contratante"];
         $orcamento = $_POST["orcamento"]; 
-        $workers = 1;
-        $developers = $_POST["developers[]"];
+        
+        $quantidade = $_POST['quant'];
+        $vetor = array();
+
+        for ($i=0; $i < $quantidade; $i++) { 
+             array_push($vetor, $_POST['developers'.$i]);
+         
+        }
+        
         $datainicio = $_POST['datainicio'];
         $dataentrega = $_POST['dataentrega'];
-        $project = new Project(null, $name, $contratante, $orcamento,$workers, $developers,$datainicio,$dataentrega);
+        $project = new Project(null, $name, $contratante, $orcamento,$quantidade,$datainicio,$dataentrega);
 
         $projectController = new ProjectsController();
-        $projectController->registerNewProject($project);
+        $projectController->registerNewProject($project,$vetor);
 
         header("location:../view/projectRegister.php?register=true");
     }
