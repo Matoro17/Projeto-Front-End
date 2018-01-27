@@ -43,6 +43,11 @@ td {
 	margin: 10px;
 }
 
+#sample2 {
+	background-color: #B0C4DE;  
+
+}
+
 #divHome {
 
 	margin: 20px;
@@ -51,4 +56,12 @@ td {
 	
 	border-style: groove;
 	border-color: #2a91f8;
+	text-align: left;
+}
+
+#divHome2 {
+
+	margin: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }

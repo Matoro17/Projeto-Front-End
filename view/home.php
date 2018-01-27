@@ -51,23 +51,26 @@
 
             echo "<div class='container' align='center'>
                         <div class='col-lg-9 col-md-9 rounded' id='divHome'>
-                            <div class='col-lg-5'>
-                                <h5>Nome -> $nome</h5>
-                                <h5>Github -> $githug</h5>
-                                <h5>E-mail -> $email</h5>
-                                <h5>Telefone -> $tel</h5>
-                                <h5>Estado Civil -> $estado</h5>
-                                <h5>Idade -> $age</h5>
-                                <h5>Total de Pontos -> $ponto</h5>
+                            <div id='sample2'>
+                                <div id='divHome2'>
+                                    <h5>Nome <- $nome</h5>
+                                    <h5>Github <- $githug</h5>
+                                    <h5>E-mail <- $email</h5>
+                                    <h5>Telefone <- $tel</h5>
+                                    <h5>Estado Civil <- $estado</h5>
+                                    <h5>Idade <- $age</h5>
+                                    <h5>Total de Pontos <- $ponto</h5>
+                                </div>
                             </div>
                         </div>
                         <div class='col-lg-9 col-md-9 rounded' id='divHome'>
-                            <div class='col-lg-5'>
-                                <br>
-                                <h4>Projetos</h4>
-                                <div class='form-group row'>
-                                    <h5>Lista dos projetos que participou</h5>
-                                </div>                                
+                            <div id='sample2'>
+                                <div id='divHome2'>
+                                    <h4>Projetos</h4>
+                                    <div>
+                                        <h5>Lista dos projetos que participou</h5>
+                                    </div>
+                                </div>
                             </div>
                         </div>                  
                   </div>";
