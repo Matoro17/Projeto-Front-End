@@ -1,5 +1,5 @@
 <?php
-     
+     require_once("../controllers/ProjectsController.class.php");
     require_once("../controllers/MembersController.class.php");
     require_once("../model/Member.class.php");
     session_start();
@@ -43,77 +43,9 @@
     <?php
 
       if (isset($_SESSION['auth'])) {
-      
-        $size = $_SESSION['size']['MAX(id)'];
-        $control = new MembersController();
-          for ($i=1; $i < $size+1; $i++) { 
-            $atual = $control->getMember($i);
-            $nome = $atual->getName();
-            $age = $atual->getAge();
-            $email = $atual->getEmail();
-            $tel = $atual->getTelefone();
-            $estado = $atual->getEstadoCivil();
-            $ponto = $atual->getPontuacao();
-
-            echo "  <!--Inicio de um membro -->
-                    <div class='row' id='block'>
-                      <div class='col-lg-2 col-md-2' >
-                        <center>
-                          
-                          <h5>
-                           $nome
-                          </h5>
-                        </center>
-                        
-                      </div>                
-                      <div class='col-lg-9 col-md-9 rounded' id='sample'>
-                        <div class='row my-2'>
-                          <div class='col-6 '>
-                            <small>
-                            Idade:$age<br>
-                            E-mail: $email<br>
-                            Tel: $tel<br>
-                            Estado Civil: $estado<br></small>
-                            
-                          </div>
-                          <div class='col-6' align='center'>
-                            PONTUAÇÃO TOTAL<br>              
-                            <p align='center'>            
-                              <button id='pontos' class='btn' type='button' data-toggle='collapse' data-target='#collapseExample$i' aria-expanded='false' aria-controls='collapseExample'>
-                                $ponto
-                              </button>
-                            </p>
-                          </div>
-                        </div>          
-                        <div class='collapse' id='collapseExample$i'><!-- ID PRECISA SER ALTERAVEL COM O PHP PARA CADA MEMBRO-->
-                          <div class='card card-block' style='margin-bottom: 10px;'>
-                            <table class='table-striped'>
-                              <thead>
-                                <tr>
-                                  <td>Data</td>
-                                  <td class='col-1'>Nome do Projeto</td>
-                                  <td class='col-1'>Pontos</td>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>      
-                                  <td>12/02/2008</td>
-                                  <td>Pollar</td>
-                                  <td>9000</td>
-                                </tr>
-                                <tr>      
-                                  <td>12/02/2008</td>
-                                  <td>Pollar</td>
-                                  <td>9000</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>       
-                    </div>
-                    <!--Termino de um membro -->";
-          }
+          include "membroslot.php";
+        
+          
       }
       else{
         echo "<div class='container' style='height: 200px'><b>Faça Login para ter acesso aos usuários cadastrados</b></div>";
