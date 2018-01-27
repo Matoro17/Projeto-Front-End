@@ -47,25 +47,29 @@
             $tel = $atual->getTelefone();
             $estado = $atual->getEstadoCivil();
             $ponto = $atual->getPontuacao();
+            $githug = $atual->getGithub();
 
-            echo "<div class='container'>
-                        <div class='form-group row' id='divHome'>
+            echo "<div class='container' align='center'>
+                        <div class='col-lg-9 col-md-9 rounded' id='divHome'>
                             <div class='col-lg-5'>
-                                <h5>$nome</h5>
-                                <h5>$age</h5>
-                                <h5>$email</h5>
-                                <h5>$tel</h5>
-                                <h5>$estado</h5>
-                                <h5>$ponto</h5>
+                                <h5>Nome -> $nome</h5>
+                                <h5>Github -> $githug</h5>
+                                <h5>E-mail -> $email</h5>
+                                <h5>Telefone -> $tel</h5>
+                                <h5>Estado Civil -> $estado</h5>
+                                <h5>Idade -> $age</h5>
+                                <h5>Total de Pontos -> $ponto</h5>
                             </div>
                         </div>
-                        <div class='form-group row'>
+                        <div class='col-lg-9 col-md-9 rounded' id='divHome'>
                             <div class='col-lg-5'>
+                                <br>
                                 <h4>Projetos</h4>
-                                
+                                <div class='form-group row'>
+                                    <h5>Lista dos projetos que participou</h5>
+                                </div>                                
                             </div>
-
-                        </div>
+                        </div>                  
                   </div>";
 
 
