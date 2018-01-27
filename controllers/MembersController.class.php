@@ -32,12 +32,23 @@
             $sql = $connection->query($query);
         }
 
+        public function getIdMember($nome){
+            $connection = Connection::getInstance();
+            $query = "SELECT * FROM membro WHERE name= $nome";
+            $sql = $connection->query($query);
+            $row = $sql->fetch(PDO::FETCH_ASSOC);
+            if(isset($row)) {
+                return new Member($row['email'],$row['password'],$id,$row['name'], $row['birthdate'], $row['age'],$row['estadocivil'],$row['telefone'],$row['github'],$row['pontuacao'],$row['admin'] );
+            } else {
+                return null;
+            }
+        }
+
         public function getMember($id) {
             $connection = Connection::getInstance();
             $query = "SELECT * FROM membro WHERE id= $id";
             $sql = $connection->query($query);
             $row = $sql->fetch(PDO::FETCH_ASSOC);
-            
             if(isset($row)) {
                 return new Member($row['email'],$row['password'],$id,$row['name'], $row['birthdate'], $row['age'],$row['estadocivil'],$row['telefone'],$row['github'],$row['pontuacao'],$row['admin'] );
             } else {
@@ -58,5 +69,7 @@
             $row = $sql->fetch(PDO::FETCH_ASSOC);
             return $row;
         }
+
+
     }
 ?>

@@ -1,25 +1,36 @@
 <?php
     require_once("../database/Connection.class.php");
     require_once("../model/Project.class.php");
-    
-    class ProjectController {
+    require_once("../controllers/MembersController.class.php");
+
+    class ProjectsController {
         private $connection;
         
         public function __construct() {
             $this->connection = Connection::getInstance();
         }
     
-        public function registerNewProject($member) {
+        public function registerNewProject($project) {
             $connection = Connection::getInstance();
-            $query = "INSERT INTO project(`id`, `name`, `contratante`, `orcamento`, `workers`, `developers`) VALUES (null, 
-                                                                                            '{$member->getName()}',
-                                                                                            '{$member->getContratante()}', 
-                                                                                            '{$member->getOrcamento()}',
-                                                                                            '{$member->getWorkers()}', 
-                                                                                            '{$member->getDevelopers()}'
+            $query = "INSERT INTO project(`id`, `name`, `contratante`, `orcamento`, `workers`, `developers`,`datainicio`, `dataentrega`) VALUES (null, 
+                                                                                            '{$project->getName()}',
+                                                                                            '{$project->getContratante()}', 
+                                                                                            '{$project->getOrcamento()}',
+                                                                                            '{$project->getWorkers()}', 
+                                                                                            '{$project->getDevelopers()}',
+                                                                                            '{$project->getDataInicio()}',
+                                                                                            '{$project->getDataEntrega()}'
                                                                                         )";
             $sql = $connection->query($query);
+            $atual = getProjectIdbyName($project->getName());
+            
+            foreach ($project->getDevelopers() as $value) {
+                $query = "INSERT INTO `membroproject`(`ID_membroproject`, `idMembro`, `idProject`) VALUES (null,getIdMember($value),$atual)";
+            }
+
+            
         }
+
 
         public function updateProjectName($id, $name) {
             $connection = Connection::getInstance();
@@ -27,14 +38,47 @@
             $sql = $connection->query($query);
         }
 
-        public function getProject($id) {
+        public function getProject($idProject) {
             $connection = Connection::getInstance();
-            $query = "SELECT * FROM project WHERE id= $id";
+            $query = "SELECT * FROM project WHERE id=$idProject";
             $sql = $connection->query($query);
             $row = $sql->fetch(PDO::FETCH_ASSOC);
-            
+           
             if(isset($row)) {
-                return new Project($row['id'],$row['name'],$row['contratante'], $row['orcamento'], $row['workers'],$row['developers']);
+                return new Project($row['id'],$row['name'],$row['contratante'], $row['orcamento'], $row['workers'],$row['developers'],$row['datainicio'], $row['dataentrega']);
+            } else {
+                return null;
+            }
+        }
+
+        public function getProjectIdbyName($nome){
+            $connection = Connection::getInstance();
+            $query = "SELECT * FROM project WHERE name=$nome";
+            $sql = $connection->query($query);
+            $row = $sql->fetch(PDO::FETCH_ASSOC);
+           
+            if(isset($row)) {
+                return new Project($row['id'],$row['name'],$row['contratante'], $row['orcamento'], $row['workers'],$row['developers'],$row['datainicio'], $row['dataentrega']);
+            } else {
+                return null;
+            }
+        }
+
+
+
+        public function getProjectsbyUser($idUser){
+            $connection = Connection::getInstance();
+            $query = "SELECT idProject FROM membroproject WHERE membroproject.idMembro=$idUser";
+            $sql = $connection->query($query);
+            $row = $sql->fetchAll(PDO::FETCH_ASSOC);
+            $vetor = array();
+            foreach ($row as $value) {
+                $bilada = $value['idProject'];
+                $chi = $bilada[0];
+                array_push($vetor, $this->getProject($bilada));
+            }
+            if(isset($row)) {
+                return $vetor;
             } else {
                 return null;
             }

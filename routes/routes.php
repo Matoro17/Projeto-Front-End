@@ -24,18 +24,20 @@
         header("location:../view/userRegister.php?register=true");
     }
 
+
     if(isset($_POST["registerProjectAttempt"])) { 
         $name = $_POST["nomedoprojeto"];
         $contratante = $_POST["contratante"];
         $orcamento = $_POST["orcamento"]; 
         $workers = 1;
-        $developers = $_POST["developers"];
-        
+        $developers = $_POST["developers[]"];
+        $datainicio = $_POST['datainicio'];
+        $dataentrega = $_POST['dataentrega'];
+        $project = new Project(null, $name, $contratante, $orcamento,$workers, $developers,$datainicio,$dataentrega);
 
-        $project = new Project(null, $name, $contratante, $orcamento,$workers, $developers);
-
-        $projectController = new ProjectController();
+        $projectController = new ProjectsController();
         $projectController->registerNewProject($project);
+
         header("location:../view/projectRegister.php?register=true");
     }
 
@@ -51,8 +53,10 @@
             $_SESSION["points"] = $member->getPontuacao();
             $_SESSION['id'] = $member->getId();
             $control = new MembersController();
+            $controlprojects = new ProjectsController();
             $_SESSION['size'] = $control->getSize();
-           
+            $_SESSION['projectssize'] = $controlprojects->getSize();
+
             header("location:../view/home.php");
         } else {
             header("location:../view/login.php?valid=false");

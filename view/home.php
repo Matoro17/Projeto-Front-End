@@ -1,6 +1,7 @@
 <?php
      require_once("../controllers/MembersController.class.php");
      require_once("../model/Member.class.php");
+    require_once("../controllers/ProjectsController.class.php");
     session_start(); 
     if(!isset($_SESSION["auth"])) {
         echo "<div><p>Loged</p></div>";
@@ -51,7 +52,7 @@
                         <div class='form-group row' id='divHome'>
                             <div class='col-lg-5'>
                                 <h5>$nome</h5>
-                                <h5>$$age</h5>
+                                <h5>$age</h5>
                                 <h5>$email</h5>
                                 <h5>$tel</h5>
                                 <h5>$estado</h5>
@@ -61,9 +62,39 @@
                         <div class='form-group row'>
                             <div class='col-lg-5'>
                                 <h4>Projetos</h4>
+                                
                             </div>
+
                         </div>
                   </div>";
+
+
+
+              
+                $size2 = $_SESSION['projectssize']['MAX(id)'];
+                $control2 = new ProjectsController();
+                $vectorr = $control2->getProjectsbyUser($id);
+                
+                foreach ($vectorr as $projatual) {
+                    
+                        $nomeproj = $projatual->getName();
+
+                        $contratante = $projatual->getContratante();
+                        $orcamento = $projatual->getOrcamento();
+                        $datainicio = $projatual->getDataInicio();
+                        $dataentrega = $projatual->getDataEntrega();
+
+                        echo "<h5>$nomeproj</h5>
+                                <h5>$contratante</h5>
+                                <h5>$orcamento</h5>
+                                <h5>$datainicio</h5>
+                                <h5>$dataentrega</h5>
+                                ";
+                }
+                  
+
+                 
+
 
 
         }  

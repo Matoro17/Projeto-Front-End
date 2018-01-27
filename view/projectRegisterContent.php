@@ -18,6 +18,18 @@
           </div>
         </div>
         <div class="form-group row">
+          <label for="text-input" class="col-lg-2 col-form-label">Data de Início</label>
+          <div class="col-lg-5">
+            <input class="form-control" type="text" name="datainicio">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="text-input" class="col-lg-2 col-form-label">Data de Entrega</label>
+          <div class="col-lg-5">
+            <input class="form-control" type="text" name="dataentrega">
+          </div>
+        </div>
+        <div class="form-group row">
           <label for="text-input" class="col-lg-2 col-form-label">Orçamento Total</label>
           <div class="col-lg-2">
             <input class="form-control" type="number" name="orcamento">
@@ -26,7 +38,7 @@
         <div class="form-group row">
           <label for="text-input" class="col-lg-2 col-form-label">Desenvolvedores</label>
           <div class="col-lg-5" id="divdodev">
-            <input class="form-control" type="text" name="developers">
+            <input class="form-control" type="text" name="developers[]">
             <button type="button" class="btn" id="btndev">+1 Dev</button>
           </div>
         </div>                  

@@ -71,7 +71,7 @@
         echo "<nav class='navbar navbar-expand-lg navbar-blue bg-dark'>
                 <div class='container'>
                   <div class='collapse navbar-collapse' id='navbarResponsive'>
-                    <b style='color:#007bff;'>Bem vindo:</b><a class='nav-link' href='home.php'> $nome</a><b style='color:#007bff;'>Pontuação - $pontos</b>   
+                    <b style='color:#007bff;'>Bem vindo:</b><a class='nav-link' href='view/home.php'> $nome</a><b style='color:#007bff;'>Pontuação - $pontos</b>   
                     <ul class='navbar-nav ml-auto'>
                       <li class='nav-item'>
                         <a class='nav-link' href='view/userRegister.php' id='userregister'>Cadastrar Usuario
@@ -90,7 +90,7 @@
         echo "<nav class='navbar navbar-expand-lg navbar-white bg-dark'>
                 <div class='container'>
                   <div class='collapse navbar-collapse' id='navbarResponsive'>
-                    <b style='color:#007bff;'>Bem vindo:</b><a class='nav-link' href='home.php'> $nome</a><b style='color:#007bff;'>Pontuação - $pontos</b> 
+                    <b style='color:#007bff;'>Bem vindo:</b><a class='nav-link' href='view/home.php'> $nome</a><b style='color:#007bff;'>Pontuação - $pontos</b> 
                     <ul class='navbar-nav ml-auto'>
                       
                     </ul>
