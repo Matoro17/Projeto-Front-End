@@ -43,7 +43,10 @@
         $project = new Project(null, $name, $contratante, $orcamento,$quantidade,$datainicio,$dataentrega);
 
         $projectController = new ProjectsController();
-        $projectController->registerNewProject($project,$vetor);
+        $projectController->registerNewProject($project);
+        $_SESSION['project'] = $project;
+        $_SESSION['vector'] = $vetor;
+
 
         header("location:../view/projectRegister.php?register=true");
     }

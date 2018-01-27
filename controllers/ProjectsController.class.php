@@ -10,7 +10,7 @@
             $this->connection = Connection::getInstance();
         }
     
-        public function registerNewProject($project,$vector = array()) {
+        public function registerNewProject($project) {
             
             $connection = Connection::getInstance();
             $query = "INSERT INTO project(`id`, `name`, `contratante`, `orcamento`, `workers`,`datainicio`, `dataentrega`) VALUES (null, 
@@ -22,6 +22,13 @@
                                                                                             '{$project->getDataEntrega()}'
                                                                                         )";
             $sql = $connection->query($query);
+            
+
+            
+        }
+
+        public function insertConection($project,$vector = array()){
+            $connection = Connection::getInstance();
             $atual = $this->getProjectIdbyName($project->getName());
             
             $atual = $atual->getId();
@@ -33,14 +40,9 @@
                 $query = "INSERT INTO `membroproject`(`ID_membroproject`, `idMembro`, `idProject`) VALUES (null,$idM,$atual)";
 
                 $sql = $connection->query($query);
-                $row = $sql->fetch(PDO::FETCH_ASSOC);
-                var_dump($row);
-                die();
+                
             }
-
-            
         }
-
 
         public function updateProjectName($id, $name) {
             $connection = Connection::getInstance();

@@ -1,5 +1,9 @@
 <?php
+  require_once("../controllers/MembersController.class.php");
+  require_once("../controllers/ProjectsController.class.php");
+  require_once("../model/Member.class.php");
   session_start(); 
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
