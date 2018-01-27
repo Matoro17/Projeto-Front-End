@@ -38,8 +38,7 @@
         <div class="form-group row">
           <label for="text-input" class="col-lg-2 col-form-label">Desenvolvedores</label>
           <div class="col-lg-5" id="divdodev">
-            <select>
-          
+            <select>         
                 <?php
                           $size = $_SESSION['size']['MAX(id)'];
                           $control = new MembersController();
@@ -49,19 +48,11 @@
                             
                               echo "<option>".$nome."</option>";
                             }
-                ?>
-      
+                ?>     
             </select>
             <button type="button" class="btn" id="btndev">+1 Dev</button>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="text-input" class="col-lg-2 col-form-label">Desenvolvedores</label>
-          <div class="col-lg-5" id="divdodev">
-            <input class="form-control" type="text" name="developers[]">
-            <button type="button" class="btn" id="btndev">+1 Dev</button>
-          </div>
-        </div>                  
+        </div>                
         <div style="margin-bottom: 20px;">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn" type="submit" name="registerProjectAttempt" value="Enviar" align="center">
         </div>            
