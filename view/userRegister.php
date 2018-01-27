@@ -1,10 +1,7 @@
     <?php
         session_start(); 
     
-        if(!isset($_SESSION["auth"])) {
-            header("location:../index.php");
-            echo "<div><p>Loged</p></div>";
-        }
+        
     ?>
 <!DOCTYPE html>
 <html lang="en">

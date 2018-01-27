@@ -1,0 +1,4 @@
+valor*0.2 *0.1 = Porcentagem do vendedor
+valor*0.2 *0.9 = Porcentaagem da equipe (Divide pela quantidade de membbros no projet)
+valor*0,8*0,1875= Porcentagem da condir (Divide pela quantidade de membros na diretoria)
+valor*0,8*0,8125 = Porcentagem da empresa

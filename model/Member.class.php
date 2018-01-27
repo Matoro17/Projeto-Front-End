@@ -52,6 +52,12 @@
             }
         }
 
+
+        function setPontuacao($value)
+        {
+            $this->pontuacao = $value;
+        }
+
         function getId() {
             return $this->id;
         }
