@@ -38,6 +38,26 @@
         <div class="form-group row">
           <label for="text-input" class="col-lg-2 col-form-label">Desenvolvedores</label>
           <div class="col-lg-5" id="divdodev">
+            <select>
+          
+                <?php
+                          $size = $_SESSION['size']['MAX(id)'];
+                          $control = new MembersController();
+                            for ($i=1; $i < $size+1; $i++) { 
+                              $atual = $control->getMember($i);
+                              $nome = $atual->getName();
+                            
+                              echo "<option>".$nome."</option>";
+                            }
+                ?>
+      
+            </select>
+            <button type="button" class="btn" id="btndev">+1 Dev</button>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="text-input" class="col-lg-2 col-form-label">Desenvolvedores</label>
+          <div class="col-lg-5" id="divdodev">
             <input class="form-control" type="text" name="developers[]">
             <button type="button" class="btn" id="btndev">+1 Dev</button>
           </div>
