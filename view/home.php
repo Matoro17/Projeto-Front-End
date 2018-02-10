@@ -62,21 +62,8 @@
                                     <h5>Total de Pontos <- $ponto</h5>
                                 </div>
                             </div>
-                        </div>
-                        <div class='col-lg-9 col-md-9 rounded' id='divHome'>
-                            <div id='sample2'>
-                                <div id='divHome2'>
-                                    <h4>Projetos</h4>
-                                    <div>
-                                        <h5>Lista dos projetos que participou</h5>
-                                    </div>
-                                </div>
-                            </div>
                         </div>                  
                   </div>";
-
-
-
               
                 $size2 = $_SESSION['projectssize']['MAX(id)'];
                 $control2 = new ProjectsController();
@@ -91,19 +78,23 @@
                         $datainicio = $projatual->getDataInicio();
                         $dataentrega = $projatual->getDataEntrega();
 
-                        echo "<h5>$nomeproj</h5>
-                                <h5>$contratante</h5>
-                                <h5>$orcamento</h5>
-                                <h5>$datainicio</h5>
-                                <h5>$dataentrega</h5>
-                                ";
+                        echo "<div class='container' align='center'>
+                                <div class='col-lg-9 col-md-9 rounded' id='divHome'>
+                                    <div id='sample2'>
+                                        <div id='divHome2'>
+                                            <h4>Projetos</h4>
+                                            <div>
+                                                <h5>Título <- $nomeproj</h5>
+                                                <h5>Contratante <- $contratante</h5>
+                                                <h5>Orçamento <- $orcamento</h5>
+                                                <h5>Data de Inicio <- $datainicio</h5>
+                                                <h5>Data de Entrega <- $dataentrega</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                  
+                            </div>";
                 }
-                  
-
-                 
-
-
-
         }  
     ?>
 
