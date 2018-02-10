@@ -44,8 +44,10 @@ td {
 }
 
 #sample2 {
-	background-color: #B0C4DE;  
-
+	background-image: url("../img/logoNome1.jpg");
+	background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #divHome {
