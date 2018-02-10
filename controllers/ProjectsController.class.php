@@ -27,17 +27,17 @@
             
         }
 
-        public function insertConection($project,$vector = array()){
+        public function insertConection($project,$vector = array(), $vendor){
             $connection = Connection::getInstance();
             $atual = $this->getProjectIdbyName($project->getName());
             
             $atual = $atual->getId();
             $mebrocontrol = new MembersController();
-
+            $vendorid = $mebrocontrol->getIdMember($vendor)->getId();
             foreach ($vector as $value) {
                 $idM = $mebrocontrol->getIdMember($value)->getId();
                 
-                $query = "INSERT INTO `membroproject`(`ID_membroproject`, `idMembro`, `idProject`) VALUES (null,$idM,$atual)";
+                $query = "INSERT INTO `membroproject`(`ID_membroproject`, `idMembro`, `idProject`, `idVendedor`) VALUES (null,$idM,$atual,$vendorid)";
 
                 $sql = $connection->query($query);
                 

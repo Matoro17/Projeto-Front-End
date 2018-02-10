@@ -38,6 +38,24 @@
           </div>
         </div>
         <div class="form-group row">
+          <label for="text-input" class="col-lg-2 col-form-label">Vendedor</label>
+          <div class="col-lg-5" id="divdovendedor">
+            <select name="vendedor0">
+                <?php
+                          $size = $_SESSION['size']['MAX(id)'];
+                          $control = new MembersController();
+                            for ($i=1; $i < $size+1; $i++) { 
+                              $atual = $control->getMember($i);
+                              $nome = $atual->getName();
+                            
+                              echo "<option>".$nome."</option>";
+                            }
+                ?>     
+            </select>
+          </div>
+
+        </div>
+        <div class="form-group row">
           <label for="text-input" class="col-lg-2 col-form-label">Desenvolvedores</label>
           <div class="col-lg-5" id="divdodev">
 
@@ -68,7 +86,7 @@
         if(isset($_GET["register"]) && $_GET["register"] == "true") {
             echo "<h1>Projeto Registrado!</h1>";
             $projectController = new ProjectsController();
-            $projectController->insertConection($_SESSION['project'], $_SESSION['vector']);
+            $projectController->insertConection($_SESSION['project'], $_SESSION['vector'], $_SESSION['vendor']);
         }
       ?>
 </div>   

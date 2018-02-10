@@ -29,7 +29,7 @@
         $name = $_POST["nomedoprojeto"];
         $contratante = $_POST["contratante"];
         $orcamento = $_POST["orcamento"]; 
-        
+        $vendedor = $_POST['vendedor0'];
         $quantidade = $_POST['quant'];
         $vetor = array();
 
@@ -40,12 +40,13 @@
         
         $datainicio = $_POST['datainicio'];
         $dataentrega = $_POST['dataentrega'];
-        $project = new Project(null, $name, $contratante, $orcamento,$quantidade,$datainicio,$dataentrega);
+        $project = new Project(null, $name, $contratante, $orcamento,$quantidade,$datainicio,$dataentrega,$vendedor);
 
         $projectController = new ProjectsController();
         $projectController->registerNewProject($project);
         $_SESSION['project'] = $project;
         $_SESSION['vector'] = $vetor;
+        $_SESSION['vendor'] = $vendedor;
 
 
         header("location:../view/projectRegister.php?register=true");
