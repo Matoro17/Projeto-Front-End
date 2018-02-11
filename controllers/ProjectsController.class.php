@@ -29,24 +29,33 @@
 
         public function insertConection($project,$vector = array(), $vendor){
             $connection = Connection::getInstance();
-            $atual = $this->getProjectIdbyName($project->getName());
+            $atual2 = $this->getProjectIdbyName($project->getName());
             
-            $atual = $atual->getId();
+            $atual = $atual2->getId();
             $mebrocontrol = new MembersController();
-            $vendorid = $mebrocontrol->getIdMember($vendor)->getId();
+
+            $vendorreal = $mebrocontrol->getIdMember($vendor);
+            $vendorponts = ($atual2->getOrcamento()* 0.2 * 0.1)+$vendorreal->getPontuacao();
+            $vendorid = $vendorreal->getId();
+
+            $query = "UPDATE `membro` SET pontuacao=$vendorponts WHERE `id`= $vendorid";
+            $sql = $connection->query($query);
             foreach ($vector as $value) {
-                $idM = $mebrocontrol->getIdMember($value)->getId();
-                
+                $dev = $mebrocontrol->getIdMember($value);
+                $devponts = (($atual2->getOrcamento()* 0.2 * 0.9)/$atual2->getWorkers())+$dev->getPontuacao();
+                $idM = $dev->getId();
                 $query = "INSERT INTO `membroproject`(`ID_membroproject`, `idMembro`, `idProject`, `idVendedor`) VALUES (null,$idM,$atual,$vendorid)";
 
                 $sql = $connection->query($query);
-                
+                $query = "UPDATE `membro` SET pontuacao=$devponts WHERE id= $idM";
+                $sql = $connection->query($query);
             }
         }
 
+
         public function updateProjectName($id, $name) {
             $connection = Connection::getInstance();
-            $query = "UPDATE project SET name='{$name}' WHERE id= $id";
+            $query = "UPDATE project SET `name`='{$name}' WHERE id= $id";
             $sql = $connection->query($query);
         }
 

@@ -49,6 +49,7 @@
         $_SESSION['vendor'] = $vendedor;
 
 
+
         header("location:../view/projectRegister.php?register=true");
     }
 

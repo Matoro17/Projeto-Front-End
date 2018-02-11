@@ -17,7 +17,7 @@
             $tel = $atual->getTelefone();
             $estado = $atual->getEstadoCivil();
             $ponto = $atual->getPontuacao();
-
+            
             $giant.= "  <!--Inicio de um membro -->
                     <div class='row' id='block'>
                       <div class='col-lg-2 col-md-2' >
